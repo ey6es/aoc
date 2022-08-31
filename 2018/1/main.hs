@@ -1,7 +1,7 @@
 import qualified Data.Set as Set
 
 readNumber :: [Char] -> Int
-readNumber s = read (if head s == '+' then tail s else s)
+readNumber s = read $ if head s == '+' then tail s else s
 
 firstRepeated :: [Int] -> Set.Set Int -> Int
 firstRepeated list seen
@@ -11,4 +11,4 @@ firstRepeated list seen
 
 main = do
   contents <- readFile "input.txt"
-  putStrLn (show (firstRepeated (scanl (+) 0 (cycle (map readNumber (lines contents)))) Set.empty))
+  putStrLn $ show $ firstRepeated (scanl (+) 0 (cycle $ map readNumber (lines contents))) Set.empty
