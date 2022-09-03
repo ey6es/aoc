@@ -11,4 +11,4 @@ firstRepeated list seen
 
 main = do
   contents <- readFile "input.txt"
-  putStrLn $ show $ firstRepeated (scanl (+) 0 (cycle $ map readNumber (lines contents))) Set.empty
+  putStrLn $ show $ firstRepeated (scanl1 (+) $ cycle $ map readNumber $ lines contents) Set.empty
