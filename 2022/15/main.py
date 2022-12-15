@@ -5,20 +5,16 @@ def parse_coord(string):
 def manhattan_distance(a, b):
   return abs(a[0] - b[0]) + abs(a[1] - b[1])
 
-max_coord = 4000000
-
 class Sensor:
   def __init__(self, string):
     parts = string.split(':')
     self.coord = parse_coord(parts[0])
     self.beacon_coord = parse_coord(parts[1])
     self.distance = manhattan_distance(self.coord, self.beacon_coord)
-  def get_width_and_range(self, yy):
-    
-    return (width, min_x, max_x)
 
 with open('input.txt') as f:
   sensors = list(map(Sensor, f.readlines()))
+  max_coord = 4000000
   for yy in range(0, max_coord + 1):
     endpoints = []
     for sensor in sensors:
