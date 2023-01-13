@@ -3,9 +3,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import java.util.BitSet;
-import java.util.function.BiConsumer;
-
 public class Main {
   public static void main (String[] args) throws IOException {
     try (var lines = Files.lines(Path.of("input.txt"))) {
